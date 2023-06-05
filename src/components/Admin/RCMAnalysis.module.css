@@ -41,7 +41,7 @@
   
   .form{
     width: 75%;
-    height: 600px;
+    height: 400px;
     background-color: white;
     --shadow-color: 0deg 0% 59%;
     box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
@@ -71,7 +71,7 @@
   .form div label{
     width: 40%;
     font-size: 1.5rem;
-      padding: 1.25rem 1rem;
+      padding: 1rem 1rem;
       border-radius: 0.5rem;
       font-weight: 500;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
@@ -82,7 +82,7 @@
   .form div input{
     width: 40%;
     font-size: 1.5rem;
-      padding: 1.15rem 1rem;
+      padding: 1rem 1rem;
       border-radius: 0.5rem;
       font-weight: 500;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
