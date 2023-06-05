@@ -256,3 +256,9 @@
     display: block;
     /* margin-bottom: 4rem; */
 }
+
+.attributes,
+.topdiv,
+.bigimg{
+    opacity: 0.1;
+}
