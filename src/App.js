@@ -51,7 +51,7 @@ function App() {
 
       console.log(data);
       
-      const response = await axios.post('http://itsharsh2001.pythonanywhere.com/', data,{ responseType: 'blob' });
+      const response = await axios.post('https://itsharsh2001.pythonanywhere.com/', data,{ responseType: 'blob' });
       // console.log(JSON.parse(response.data.data));
       console.log(response.data);
       // const ans = JSON.parse(response.data.data);
