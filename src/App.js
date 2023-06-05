@@ -3,6 +3,7 @@ import './App.css';
 import * as XLSX from "xlsx";
 import { saveAs } from 'file-saver'
 import { utils, writeFile } from 'xlsx';
+import { AdminPanel } from './pages/AdminPanel';
 
 import axios from 'axios';
 
@@ -171,12 +172,12 @@ const blob = new Blob([response.data], { type: 'application/octet-stream' });
 
   return (
     <>
-      {card&&<div className='card'>
+      {/* {card&&<div className='card'>
         <span onClick={(prevState)=>{setCard(!prevState)}}>
           RCM Analysis
         </span>
-      </div>}
-      {!card&&<div className='card'>
+      </div>} */}
+      {/* {!card&&<div className='card'>
         <form className='form' onSubmit={handleFormSubmit}>
           <div>
             <label>Transactions File</label>
@@ -206,11 +207,13 @@ const blob = new Blob([response.data], { type: 'application/octet-stream' });
             <label>Testing File</label>
             <input type="file" name="files" accept=".xlsx,.xls" id='Testing' onChange={ handleFileChange} />
           </div>
-          {/* Add more file input fields as needed */}
+      
           <button type="submit">Process Files</button>
         </form>
-        {/* <button onClick={handleDownload}>Download Excel</button> */}
-      </div>}
+        
+      </div>} */}
+
+      <AdminPanel/>
     </>
   );
 }

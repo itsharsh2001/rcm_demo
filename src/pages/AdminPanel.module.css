@@ -1,0 +1,10 @@
+.admin{
+    /* min-height: 100vh; */
+    width: 100vw;
+    /* padding-left: 7.5%; */
+    /* padding-right: 7.5%; */
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    /* grid-template-columns: 20% 80%; */
+}
