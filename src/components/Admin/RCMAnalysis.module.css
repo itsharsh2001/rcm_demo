@@ -2,11 +2,15 @@
     width: 100%;
     height: 85%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: left;
+    padding-left: 2.5%;
   }
   
   .card span{
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
     width: 350px;
     height: 250px;
     display: flex;
@@ -40,7 +44,7 @@
   }
   
   .form{
-    width: 75%;
+    width: 97.5%;
     height: 400px;
     background-color: white;
     --shadow-color: 0deg 0% 59%;
@@ -100,6 +104,13 @@
     cursor: pointer;
     border-radius: 0.35rem;
     font-size: 2rem;
+    transition: all ease 0.5s;
+  }
+
+  .form button:hover,
+  .form button:active{
+    background-color: #f0f0f0;
+    color: #522398;
   }
   
   .form p{
