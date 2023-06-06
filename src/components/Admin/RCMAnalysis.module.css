@@ -386,6 +386,8 @@
     align-items: center;
     justify-content: center;
     height: 100px;
+    margin-left: 45%;
+    margin-top: 10%;
   }
   
   .spinner .loader {
