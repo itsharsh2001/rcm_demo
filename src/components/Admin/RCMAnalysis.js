@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './RCMAnalysis.module.css'
 import { useState } from 'react';
+import { RotateLoader } from 'react-spinners';
 
 import * as XLSX from "xlsx";
 import { saveAs } from 'file-saver'
@@ -11,6 +12,7 @@ function RCMAnalysis() {
     const [card, setCard] = useState(true)
     const [files, setFiles] = useState([]);
     const [ids, setIds] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleFileChange = (event) => {
         const selectedFile = event.target.files[0];
@@ -21,6 +23,7 @@ function RCMAnalysis() {
     };
 
     const handleFormSubmit = async (event) => {
+        setIsLoading(true);
         event.preventDefault();
 
 
@@ -81,9 +84,10 @@ function RCMAnalysis() {
             link.href = downloadUrl;
             link.download = 'output.xlsx';
             link.click();
-
+            setIsLoading(false);
         } catch (error) {
             console.error("An error occurred while downloading the file", error);
+            setIsLoading(false);
         }
     };
 
@@ -179,42 +183,49 @@ function RCMAnalysis() {
                 </span>
             </div>}
             {!card && <div className={classes.card}>
-                <form className={classes.form} onSubmit={handleFormSubmit}>
-                    <div>
-                        <label>Vendor Master File</label>
-                        <input type="file" name="files" accept=".xlsx,.xls" id='VendorDetails' onChange={handleFileChange} />
+                {isLoading ? (
+                    <div className="spinner">
+                        <RotateLoader color="#ffffff" loading={true} size={15} />
                     </div>
-                    <div>
-                        <label>SAC Master File</label>
-                        <input type="file" name="files" accept=".xlsx,.xls" id='SACMaster' onChange={handleFileChange} />
-                    </div>
-                    <div>
-                        <label>Keyword Master File</label>
-                        <input type="file" name="files" accept=".xlsx,.xls" id='KeywordMaster' onChange={handleFileChange} />
-                    </div>
-                    <div>
-                        <label>Directors File</label>
-                        <input type="file" name="files" accept=".xlsx,.xls" id='Directors' onChange={handleFileChange} />
-                    </div>
-                    <div>
-                        <label>Transactions File</label>
-                        <input type="file" name="files" accept=".xlsx,.xls" id='Transactions' onChange={handleFileChange} />
-                    </div>
+                ) : (
+
+                    <form className={classes.form} onSubmit={handleFormSubmit}>
+                        <div>
+                            <label>Vendor Master File</label>
+                            <input type="file" name="files" accept=".xlsx,.xls" id='VendorDetails' onChange={handleFileChange} />
+                        </div>
+                        <div>
+                            <label>SAC Master File</label>
+                            <input type="file" name="files" accept=".xlsx,.xls" id='SACMaster' onChange={handleFileChange} />
+                        </div>
+                        <div>
+                            <label>Keyword Master File</label>
+                            <input type="file" name="files" accept=".xlsx,.xls" id='KeywordMaster' onChange={handleFileChange} />
+                        </div>
+                        <div>
+                            <label>Directors File</label>
+                            <input type="file" name="files" accept=".xlsx,.xls" id='Directors' onChange={handleFileChange} />
+                        </div>
+                        <div>
+                            <label>Transactions File</label>
+                            <input type="file" name="files" accept=".xlsx,.xls" id='Transactions' onChange={handleFileChange} />
+                        </div>
 
 
-                    <div>
-                        <label>Client File</label>
-                        <input type="file" name="files" accept=".xlsx,.xls" id='ClientDetails' onChange={handleFileChange} />
-                    </div>
+                        <div>
+                            <label>Client File</label>
+                            <input type="file" name="files" accept=".xlsx,.xls" id='ClientDetails' onChange={handleFileChange} />
+                        </div>
 
 
-                    {/* <div>
+                        {/* <div>
                         <label>Testing File</label>
                         <input type="file" name="files" accept=".xlsx,.xls" id='Testing' onChange={handleFileChange} />
                     </div> */}
-                    {/* Add more file input fields as needed */}
-                    <button type="submit">PROCESS</button>
-                </form>
+                        {/* Add more file input fields as needed */}
+                        <button type="submit">PROCESS</button>
+                    </form>
+                )}
                 {/* <button onClick={handleDownload}>Download Excel</button> */}
             </div>}
         </div>

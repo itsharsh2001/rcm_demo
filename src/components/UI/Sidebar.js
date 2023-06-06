@@ -27,7 +27,7 @@ export const Sidebar = ({ navigation }) => {
         <div className={classes.sidebar}>
           <span>
           <img src="/GTLogoWhite.png" alt="logoimage" />
-            TDS Analytics
+            ITD Analytics
             <CloseIcon
               onClick={sidebarToggler}
               style={{
@@ -100,11 +100,10 @@ export const Sidebar = ({ navigation }) => {
             
             <li
               onClick={() => {
-                return navigation("rcmanalysis");
+                return navigation("home");
               }}
             >
-              <SpaIcon className={classes.listicon} />
-              RCM Analysis
+              <SpaIcon className={classes.listicon2} />
             </li>
           </ul>
           {/* <div className={classes.expire}>
