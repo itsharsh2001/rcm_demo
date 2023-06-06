@@ -184,8 +184,11 @@ function RCMAnalysis() {
             </div>}
             {!card && <div className={classes.card}>
                 {isLoading ? (
-                    <div className={classes.spinner}>
-                        <RotateLoader color="#ffffff" loading={true} size={15} />
+                    // <div className={classes.spinner}>
+                    //     <RotateLoader color="#ffffff" loading={true} size={15} />
+                    // </div>
+                    <div className="spinner">
+                        <div className="loader"></div>
                     </div>
                 ) : (
 
