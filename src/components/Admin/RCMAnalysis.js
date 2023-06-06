@@ -187,8 +187,8 @@ function RCMAnalysis() {
                     // <div className={classes.spinner}>
                     //     <RotateLoader color="#ffffff" loading={true} size={15} />
                     // </div>
-                    <div className="spinner">
-                        <div className="loader"></div>
+                    <div className={classes.spinner}>
+                        <div className={classes.loader}></div>
                     </div>
                 ) : (
 
